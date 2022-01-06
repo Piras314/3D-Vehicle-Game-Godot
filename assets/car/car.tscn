@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/car/assets/car_model.glb" type="PackedScene" id=1]
+[ext_resource path="res://assets/car/scripts/car.gd" type="Script" id=2]
+
+[sub_resource type="ConvexPolygonShape" id=1]
+points = PoolVector3Array( -0.900981, -0.481506, 1.94872, -0.519868, 0.666403, -0.211145, 0.848972, -0.524252, -1.76435, 0.848972, -0.609744, 1.94872, 0.569752, 0.277554, -2.06537, -0.247581, 0.112607, 1.92989, -1.02914, 0.329373, 0.625476, -0.825777, -0.584565, -0.875649, -0.699598, 0.317634, -1.85287, 0.513405, 0.669772, -0.291822, 1.01986, 0.329373, 0.625476, 0.525601, 0.0722168, 1.98532, -0.943702, -0.139926, -1.46557, -0.293849, -0.5884, 2.09286, -0.576478, 0.603335, -1.07566, 0.934214, -0.268035, -1.67924, 0.664057, -0.386935, -2.14607, -0.58856, 0.197871, -2.14131, 0.676636, 0.432559, -1.49581, -0.699443, 0.0316962, 1.94807, 0.499174, 0.575159, 0.336365, 0.934214, -0.353397, 1.90616, 0.120348, -0.177227, 2.19592, 0.821436, -0.5884, -0.880965, -0.85826, -0.524252, -1.72179, -0.507463, 0.574122, 0.335712, -0.789381, -0.5884, 1.92769, 0.593115, 0.58987, -1.04922, -0.501446, -0.423963, -2.16666, 0.76678, 0.0721218, 1.81371, 0.763964, 0.314903, -1.59131, -0.461298, -0.0101964, 2.10328, -0.572494, -0.57692, -1.39252, 0.579273, 0.197871, -2.14131, -0.943702, -0.139926, 1.73549, -0.81235, 0.31445, -1.30584, -0.129588, -0.427188, 2.19509, -0.74679, -0.0922162, -2.034, -1.02914, 0.201264, 0.625476, -0.900981, -0.396143, -1.67924, -0.577004, 0.276755, -2.05803, 0.78379, -0.217736, 2.0195, -0.565919, 0.112023, 1.87141, 0.692746, 0.195447, -2.02383, 0.934214, -0.225418, 1.90616, -0.546685, -0.385863, -2.18282, 0.120392, -0.427539, 2.19669, 0.572179, -0.463054, -2.07412, 0.515951, 0.632696, -0.894392, 0.512237, 0.628553, 0.106183, 0.562974, 0.112703, 1.89248, -0.794494, -0.259732, 2.02311, 0.451895, -0.0101807, 2.10275, -0.85826, -0.566868, 1.94872, -0.524894, 0.632311, -0.893795, 0.841831, 0.233202, -1.26267, 0.535017, -0.300903, -2.17321, -0.760243, 0.111538, 1.69734, 0.5972, -0.57009, -1.37732, 0.411923, -0.260358, 2.1522, -0.521525, 0.628553, 0.106183, -0.671713, -0.385736, -2.14019, -0.581466, -0.463054, -2.07412, 0.284562, -0.5884, 2.09286 )
+
+[node name="Car" instance=ExtResource( 1 )]
+mass = 108.844
+can_sleep = false
+script = ExtResource( 2 )
+
+[node name="Body" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.06427e-05, -0.0654494, -0.244585 )
+use_in_baked_light = true
+
+[node name="rear_left" parent="." index="1"]
+use_as_steering = true
+wheel_radius = 0.32
+wheel_friction_slip = 5.0
+suspension_travel = 1.0
+suspension_stiffness = 35.0
+suspension_max_force = 800.0
+
+[node name="rear_left" parent="rear_left" index="0"]
+use_in_baked_light = true
+
+[node name="rear_right" parent="." index="2"]
+use_as_steering = true
+wheel_radius = 0.32
+wheel_friction_slip = 5.0
+suspension_travel = 1.0
+suspension_stiffness = 35.0
+suspension_max_force = 800.0
+
+[node name="rear_right" parent="rear_right" index="0"]
+use_in_baked_light = true
+
+[node name="front_right" parent="." index="3"]
+use_as_traction = true
+wheel_radius = 0.32
+wheel_friction_slip = 5.0
+suspension_travel = 1.0
+suspension_stiffness = 35.0
+suspension_max_force = 800.0
+
+[node name="front_right" parent="front_right" index="0"]
+use_in_baked_light = true
+
+[node name="front_left" parent="." index="4"]
+use_as_traction = true
+wheel_radius = 0.32
+wheel_friction_slip = 5.0
+suspension_travel = 1.0
+suspension_stiffness = 35.0
+suspension_max_force = 800.0
+
+[node name="front_left" parent="front_left" index="0"]
+use_in_baked_light = true
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.06427e-05, -0.0463659, -0.244585 )
+shape = SubResource( 1 )
