@@ -11,7 +11,7 @@
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/CMDR-Piboy314/3D-Vehicle-Game-Godot)
 ![GitHub](https://img.shields.io/github/license/CMDR-Piboy314/3D-Vehicle-Game-Godot)
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/CCMDR-Piboy314/3D-Vehicle-Game-Godot)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/CMDR-Piboy314/3D-Vehicle-Game-Godot)
 ![GitHub all releases](https://img.shields.io/github/downloads/CMDR-Piboy314/3D-Vehicle-Game-Godot/total)
 
 Made in only 48 hours
